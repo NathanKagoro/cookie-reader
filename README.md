@@ -22,7 +22,7 @@ python main.py -f <file_path> -d <date>
 
 Example:
 
-```python
+```bash
 python main.py -f test_cases/test1.csv -d 2018-12-09
 ```
 
@@ -56,7 +56,7 @@ python main.py -f <file_path> -d <date>
 
 Example:
 
-```python
+```bash
 python main.py -f test_cases/test1.csv -d 2018-12-09
 ```
 
@@ -66,7 +66,7 @@ The program will print the most active cookie(s) for that file and date.
 
 Automated tests are included using `pytest`. To run them:
 
-```python
+```bash
 python -m pytest
 ```
 

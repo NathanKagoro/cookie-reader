@@ -24,6 +24,18 @@ def read_cookie_log(file_path):
 
     return days
 
+#Counts the number of occurrences of each cookie for the specified date and prints the most active cookie(s). 
+def get_most_active_cookies(file_path, date):
+    days = read_cookie_log(file_path)
+
+    if date in days:
+        max_count = max(days[date].values())
+        most_active_cookies = [cookie for cookie, count in days[date].items() if count == max_count]
+        return most_active_cookies
+
+    else:
+        return []
+
 # This script takes a log of cookies and a date and returns the most active cookie(s) for that date.
 if __name__ == "__main__":
     #Processeces command line arguments for the file path and date
@@ -44,13 +56,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     days = read_cookie_log(args.file)
 
-    #Counts the number of occurrences of each cookie for the specified date and prints the most active cookie(s). 
-    if args.date in days:
-        max_count = max(days[args.date].values())
-
-        for cookie, count in days[args.date].items():
-            if count == max_count:
-                print(cookie)
-
+    result = get_most_active_cookies(args.file, args.date)
+    if result:
+        for cookie in result:
+            print(cookie)
     else:
-        print("No cookies found for the specified date.")
+        print("No data for the specified date.")
+
+    

@@ -31,8 +31,6 @@ If multiple cookies share the highest frequency, each is printed on a new line.
 
 ## Test Cases
 
-## Test Cases
-
 Test cases are provided in the `test_cases/` directory as CSV files.
 
 Each file represents a different scenario, including:

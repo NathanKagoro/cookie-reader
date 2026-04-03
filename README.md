@@ -8,14 +8,23 @@ The log file is expected to be in CSV format with the following structure:
 cookie,timestamp
 
 ## Usage
+Before running the program or tests, install the required Python dependencies using the requirements.txt file. From the root of the repository, run:
 
-Run the script using:
+```bash
+pip install -r requirements.txt
+```
+
+This will install all packages needed for the project, including pytest for automated testing.
+
+After installing dependencies, you can run the program for any cookie log file and date using:
 
 python main.py -f <file_path> -d <date>
 
 Example:
 
+```python
 python main.py -f test_cases/test1.csv -d 2018-12-09
+```
 
 ## Output
 
@@ -47,7 +56,9 @@ python main.py -f <file_path> -d <date>
 
 Example:
 
+```python
 python main.py -f test_cases/test1.csv -d 2018-12-09
+```
 
 The program will print the most active cookie(s) for that file and date.
 
@@ -55,7 +66,9 @@ The program will print the most active cookie(s) for that file and date.
 
 Automated tests are included using `pytest`. To run them:
 
+```python
 python -m pytest
+```
 
 ## Implementation Notes
 
